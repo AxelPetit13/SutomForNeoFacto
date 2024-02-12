@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  backend:
+    platform: linux/amd64
+    build: ./backend  # Chemin vers le répertoire contenant votre backend Dockerfile
+    ports:
+      - "8080:8080" 
+
+  frontend:
+    platform: linux/amd64
+    build: ./frontend  # Chemin vers le répertoire contenant votre frontend Dockerfile
+    ports:
+      - "80:80" 
+
