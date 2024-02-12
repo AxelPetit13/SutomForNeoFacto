@@ -39,3 +39,11 @@
   background-color: var(--neofacto-blue);
   color: white;
 }
+
+.black {
+  background-color: black;
+}
+
+.grey {
+  background-color: grey;
+}

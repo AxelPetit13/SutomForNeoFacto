@@ -11,37 +11,193 @@
 
 <div class="keyboard">
   <div class="line">
-    <div class="letter" (click)="setLetter($event)">a</div>
-    <div class="letter" (click)="setLetter($event)">z</div>
-    <div class="letter" (click)="setLetter($event)">e</div>
-    <div class="letter" (click)="setLetter($event)">r</div>
-    <div class="letter" (click)="setLetter($event)">t</div>
-    <div class="letter" (click)="setLetter($event)">y</div>
-    <div class="letter" (click)="setLetter($event)">u</div>
-    <div class="letter" (click)="setLetter($event)">i</div>
-    <div class="letter" (click)="setLetter($event)">o</div>
-    <div class="letter" (click)="setLetter($event)">p</div>
+    <div
+      class="letter"
+      [ngClass]="colors['a'] !== 'grey' ? 'black' : 'grey'"
+      (click)="setLetter($event)"
+    >
+      a
+    </div>
+    <div
+      class="letter"
+      [ngClass]="colors['z'] !== 'grey' ? 'black' : 'grey'"
+      (click)="setLetter($event)"
+    >
+      z
+    </div>
+    <div
+      class="letter"
+      [ngClass]="colors['e'] !== 'grey' ? 'black' : 'grey'"
+      (click)="setLetter($event)"
+    >
+      e
+    </div>
+    <div
+      class="letter"
+      [ngClass]="colors['r'] !== 'grey' ? 'black' : 'grey'"
+      (click)="setLetter($event)"
+    >
+      r
+    </div>
+    <div
+      class="letter"
+      [ngClass]="colors['t'] !== 'grey' ? 'black' : 'grey'"
+      (click)="setLetter($event)"
+    >
+      t
+    </div>
+    <div
+      class="letter"
+      [ngClass]="colors['y'] !== 'grey' ? 'black' : 'grey'"
+      (click)="setLetter($event)"
+    >
+      y
+    </div>
+    <div
+      class="letter"
+      [ngClass]="colors['u'] !== 'grey' ? 'black' : 'grey'"
+      (click)="setLetter($event)"
+    >
+      u
+    </div>
+    <div
+      class="letter"
+      [ngClass]="colors['i'] !== 'grey' ? 'black' : 'grey'"
+      (click)="setLetter($event)"
+    >
+      i
+    </div>
+    <div
+      class="letter"
+      [ngClass]="colors['o'] !== 'grey' ? 'black' : 'grey'"
+      (click)="setLetter($event)"
+    >
+      o
+    </div>
+    <div
+      class="letter"
+      [ngClass]="colors['p'] !== 'grey' ? 'black' : 'grey'"
+      (click)="setLetter($event)"
+    >
+      p
+    </div>
   </div>
   <div class="line">
-    <div class="letter" (click)="setLetter($event)">q</div>
-    <div class="letter" (click)="setLetter($event)">s</div>
-    <div class="letter" (click)="setLetter($event)">d</div>
-    <div class="letter" (click)="setLetter($event)">f</div>
-    <div class="letter" (click)="setLetter($event)">g</div>
-    <div class="letter" (click)="setLetter($event)">h</div>
-    <div class="letter" (click)="setLetter($event)">j</div>
-    <div class="letter" (click)="setLetter($event)">k</div>
-    <div class="letter" (click)="setLetter($event)">l</div>
-    <div class="letter" (click)="setLetter($event)">m</div>
+    <div
+      class="letter"
+      [ngClass]="colors['q'] !== 'grey' ? 'black' : 'grey'"
+      (click)="setLetter($event)"
+    >
+      q
+    </div>
+    <div
+      class="letter"
+      [ngClass]="colors['s'] !== 'grey' ? 'black' : 'grey'"
+      (click)="setLetter($event)"
+    >
+      s
+    </div>
+    <div
+      class="letter"
+      [ngClass]="colors['d'] !== 'grey' ? 'black' : 'grey'"
+      (click)="setLetter($event)"
+    >
+      d
+    </div>
+    <div
+      class="letter"
+      [ngClass]="colors['f'] !== 'grey' ? 'black' : 'grey'"
+      (click)="setLetter($event)"
+    >
+      f
+    </div>
+    <div
+      class="letter"
+      [ngClass]="colors['g'] !== 'grey' ? 'black' : 'grey'"
+      (click)="setLetter($event)"
+    >
+      g
+    </div>
+    <div
+      class="letter"
+      [ngClass]="colors['h'] !== 'grey' ? 'black' : 'grey'"
+      (click)="setLetter($event)"
+    >
+      h
+    </div>
+    <div
+      class="letter"
+      [ngClass]="colors['j'] !== 'grey' ? 'black' : 'grey'"
+      (click)="setLetter($event)"
+    >
+      j
+    </div>
+    <div
+      class="letter"
+      [ngClass]="colors['k'] !== 'grey' ? 'black' : 'grey'"
+      (click)="setLetter($event)"
+    >
+      k
+    </div>
+    <div
+      class="letter"
+      [ngClass]="colors['l'] !== 'grey' ? 'black' : 'grey'"
+      (click)="setLetter($event)"
+    >
+      l
+    </div>
+    <div
+      class="letter"
+      [ngClass]="colors['m'] !== 'grey' ? 'black' : 'grey'"
+      (click)="setLetter($event)"
+    >
+      m
+    </div>
   </div>
   <div class="line">
     <div class="letter special" (click)="setLetter($event)">.</div>
-    <div class="letter" (click)="setLetter($event)">w</div>
-    <div class="letter" (click)="setLetter($event)">x</div>
-    <div class="letter" (click)="setLetter($event)">c</div>
-    <div class="letter" (click)="setLetter($event)">v</div>
-    <div class="letter" (click)="setLetter($event)">b</div>
-    <div class="letter" (click)="setLetter($event)">n</div>
+    <div
+      class="letter"
+      [ngClass]="colors['w'] !== 'grey' ? 'black' : 'grey'"
+      (click)="setLetter($event)"
+    >
+      w
+    </div>
+    <div
+      class="letter"
+      [ngClass]="colors['x'] !== 'grey' ? 'black' : 'grey'"
+      (click)="setLetter($event)"
+    >
+      x
+    </div>
+    <div
+      class="letter"
+      [ngClass]="colors['c'] !== 'grey' ? 'black' : 'grey'"
+      (click)="setLetter($event)"
+    >
+      c
+    </div>
+    <div
+      class="letter"
+      [ngClass]="colors['v'] !== 'grey' ? 'black' : 'grey'"
+      (click)="setLetter($event)"
+    >
+      v
+    </div>
+    <div
+      class="letter"
+      [ngClass]="colors['b'] !== 'grey' ? 'black' : 'grey'"
+      (click)="setLetter($event)"
+    >
+      b
+    </div>
+    <div
+      class="letter"
+      [ngClass]="colors['n'] !== 'grey' ? 'black' : 'grey'"
+      (click)="setLetter($event)"
+    >
+      n
+    </div>
     <div class="letter special" (click)="deleteLastLetter()">⌫</div>
     <div class="letter special" (click)="onEnterPress()">↲</div>
   </div>
