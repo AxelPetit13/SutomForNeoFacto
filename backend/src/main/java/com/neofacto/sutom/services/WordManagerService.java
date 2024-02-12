@@ -13,23 +13,29 @@ public class WordManagerService implements IWordManagerService {
     public WordManagerService() {
         RestTemplate restTemplate = new RestTemplate();
         String RANDOM_WORD_API_URL = "https://random-word-api.herokuapp.com/all?lang=en";
-        String[] response = restTemplate.getForObject(RANDOM_WORD_API_URL, String[].class);
+        try {
+            String[] response = restTemplate.getForObject(RANDOM_WORD_API_URL, String[].class);
 
-        // Sort words by length
-        if (response != null) {
-            this.wordMap = new HashMap<>();
-            for (String word : response) {
-                int length = word.length();
-                if (!wordMap.containsKey(length)) {
-                    wordMap.put(length, new ArrayList<>());
+            // Sort words by length
+            if (response != null) {
+                this.wordMap = new HashMap<>();
+                for (String word : response) {
+                    int length = word.length();
+                    if (!wordMap.containsKey(length)) {
+                        wordMap.put(length, new ArrayList<>());
+                    }
+                    wordMap.get(length).add(word);
                 }
-                wordMap.get(length).add(word);
+            } else {
+                System.out.println("The API " + RANDOM_WORD_API_URL + " returned an empty response."
+                        + " Check if the Random-word-api is working and restart the application to try again.");
             }
-        } else {
-            System.out.println("The API " + RANDOM_WORD_API_URL + " returned an empty response."
-                    + " Check if the Random-word-api is working and restart the application to try again.");
         }
-
+        catch (Exception e) {
+            System.out.println("The API " + RANDOM_WORD_API_URL + " is not reachable."
+                    + " Check if the Random-word-api is working and restart the application to try again.");
+            throw e;
+        }
     }
 
     public WordManagerService(Map<Integer, List<String>> wordMap) {
