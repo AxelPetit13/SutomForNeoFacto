@@ -1,0 +1,10 @@
+<input
+  #input
+  id="invisible-input"
+  type="text"
+  class="input"
+  [(ngModel)]="word"
+  (input)="onInputChange($event)"
+  [maxlength]="gameService.difficulty"
+  (keyup.enter)="onEnterPress($event)"
+/>

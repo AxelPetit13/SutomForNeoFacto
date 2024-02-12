@@ -1,0 +1,65 @@
+<custom-cursor></custom-cursor>
+<main class="main" (click)="keepFocusOnInput()">
+  <h1 [ngClass]="{ 'mini-title': gameService.gameStarted }">
+    <bouncing-container>S</bouncing-container>
+    <bouncing-container>u</bouncing-container>
+    <bouncing-container>t</bouncing-container>
+    <bouncing-container>o</bouncing-container>
+    <bouncing-container>m</bouncing-container>
+  </h1>
+
+  <ng-container
+    *ngIf="!gameService.gameStarted && gameService.gameIsWon === undefined"
+  >
+    <start-form></start-form>
+  </ng-container>
+
+  <ng-container
+    *ngIf="gameService.gameStarted && gameService.gameIsWon === undefined"
+  >
+    <grid
+      [rows]="gameService.maxAttempts"
+      [columns]="gameService.difficulty"
+    ></grid>
+    <keyboard></keyboard>
+  </ng-container>
+
+  <ng-container *ngIf="gameService.gameIsWon">
+    <h3>Gagné !</h3>
+    <p>
+      Il vous a fallu {{ gameService.attempts.length }} tentative{{
+        gameService.attempts.length > 1 ? "s" : ""
+      }}.
+    </p>
+    <p>Merci d'avoir joué !</p>
+    <button class="blue-button" (click)="replay()">Rejouer</button>
+  </ng-container>
+
+  <ng-container *ngIf="gameService.gameIsWon === false">
+    <h3>Perdu !</h3>
+    <p>Vous ferez mieux la prochaine fois...</p>
+    <p>Merci d'avoir joué !</p>
+    <button class="blue-button" (click)="replay()">
+      Retentez votre chance
+    </button>
+  </ng-container>
+
+  <ng-container *ngIf="gameService.errorStatus">
+    <ng-container [ngSwitch]="gameService.errorStatus">
+      <p *ngSwitchCase="gameErrorStatus.INVALID_GAME_ID">
+        Un problème est survenu lors de la récupération de la partie. Veuillez
+        recharger la page.
+      </p>
+      <p *ngSwitchCase="gameErrorStatus.WORD_ALREADY_TRIED">
+        Vous avez déjà essayé ce mot. Veuillez en essayer un autre.
+      </p>
+      <p *ngSwitchCase="gameErrorStatus.WORD_NOT_FOUND">Ce mot n'existe pas.</p>
+      <p *ngSwitchCase="gameErrorStatus.WORD_WRONG_SIZE">
+        Le mot soumis n'a pas la même longueur que le mot à deviner. Veuillez en
+        essayer une autre.
+      </p>
+    </ng-container>
+  </ng-container>
+</main>
+
+<router-outlet />

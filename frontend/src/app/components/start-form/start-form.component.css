@@ -1,0 +1,32 @@
+.form {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  gap: 2rem;
+
+  .form-group {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 4rem;
+    justify-content: space-between;
+    align-items: center;
+
+    label {
+      white-space: nowrap;
+    }
+
+    select, input {
+      background: transparent;
+      border: 0;
+      border-bottom: 2px solid #fff;
+      color: #fff;
+      font-family: inherit;
+      font-size: 1rem;
+      outline: 0;
+      padding: 7px 10px;
+      transition: border-color .2s;
+      width: 100px;
+    }
+  }
+}

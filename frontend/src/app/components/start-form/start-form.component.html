@@ -1,0 +1,32 @@
+<form class="form" (ngSubmit)="startGame()">
+  <div class="form-group">
+    <label for="difficulty">Difficulté</label>
+    <select
+      type="number"
+      id="difficulty"
+      name="difficulty"
+      [(ngModel)]="difficulty"
+      required
+    >
+      <option value="6">Facile</option>
+      <option value="7">Moyen</option>
+      <option value="8">Difficile</option>
+      <option value="9">Extrême</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="maxAttempts">Nombre de tentatives</label>
+    <select
+      type="number"
+      id="maxAttempts"
+      name="maxAttempts"
+      [(ngModel)]="maxAttempts"
+      required
+    >
+      <option *ngFor="let _ of Array(10); let i = index" value="{{ i + 1 }}">
+        {{ i + 1 }}
+      </option>
+    </select>
+  </div>
+  <button type="submit" class="blue-button">Commencer</button>
+</form>

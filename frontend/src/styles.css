@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Italiana&family=Poppins&display=swap');
+
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  cursor: none;
+}
+
+:root {
+  --neofacto-blue: rgb(0, 0, 200);
+
+}
+
+body {
+  min-height: 100vh;
+  padding: 24px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  background-color: black;
+  color: white;
+  font-family: "Poppins", sans-serif ;
+
+}
+
+.blue-button {
+  background-color: transparent;
+  border: 2px solid #0000d1;
+  border-radius: 30px;
+  color: #fff;
+  display: inline-flex;
+  font-size: 14px;
+  font-weight: 600;
+  justify-content: center;
+  letter-spacing: 1px;
+  line-height: 1;
+  min-width: 200px;
+  padding: 18px 35px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background-color .3s ease,padding .3s ease,color .3s ease,border .3s ease;
+  position: relative;
+}
+
+.blue-button:hover {
+  background-color: #0000d1;
+  color: #fff;
+  padding-right: 55px;
+}
+
+.blue-button::before {
+  background: url(/assets/images/svg/arrow.svg) no-repeat 50%/contain;
+  content: "";
+  height: 20px;
+  margin-top: -10px;
+  opacity: 0;
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translate(-14px);
+  transition: transform .3s ease,opacity .3s ease;
+  width: 24px;
+}
+
+.blue-button:hover::before {
+  opacity: 1;
+  transform: translate(0);
+}

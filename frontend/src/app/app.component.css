@@ -1,0 +1,38 @@
+main {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  width: 100vw;
+  height: 100%;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 13rem;
+  text-align: center;
+  transition: all 0.3s;
+
+}
+
+.mini-title {
+  font-size: 5rem;
+}
+
+h3 {
+  font-size: 8rem;
+  text-align: center;
+}
+
+
+
+#invisible-input {
+  opacity: 1;
+}
+
+
+

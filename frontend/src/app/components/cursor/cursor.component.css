@@ -1,0 +1,12 @@
+.custom-cursor {
+  background-color: #fff;
+  border-radius: 50%;
+  aspect-ratio: 1;
+  height: 30px;
+  mix-blend-mode: difference;
+  pointer-events: none;
+  position: absolute;
+  transition: transform .35s ease;
+  z-index: 10000;
+
+}
