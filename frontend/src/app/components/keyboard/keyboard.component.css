@@ -1,0 +1,41 @@
+.keyboard {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.line {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.letter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 1;
+  width: 50px;
+  border: 1px solid white;
+  border-radius: 2px;
+  text-transform: uppercase;
+  transition: all 0.3s;
+}
+
+.letter:hover {
+  background-color: #f0f0f0;
+  color: #000;
+}
+
+.special {
+  border: 1px solid var(--neofacto-blue);
+}
+
+.special:hover {
+  background-color: var(--neofacto-blue);
+  color: white;
+}

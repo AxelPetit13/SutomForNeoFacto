@@ -17,10 +17,7 @@ export class CellComponent {
   protected color = 'black';
   protected letter = '';
 
-  constructor(
-    private gameService: GameService,
-    private elementRef: ElementRef,
-  ) {
+  constructor(private gameService: GameService) {
     this.gameService = gameService;
   }
 

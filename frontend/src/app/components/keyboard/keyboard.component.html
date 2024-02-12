@@ -6,5 +6,43 @@
   [(ngModel)]="word"
   (input)="onInputChange($event)"
   [maxlength]="gameService.difficulty"
-  (keyup.enter)="onEnterPress($event)"
+  (keyup.enter)="onEnterPress()"
 />
+
+<div class="keyboard">
+  <div class="line">
+    <div class="letter" (click)="setLetter($event)">a</div>
+    <div class="letter" (click)="setLetter($event)">z</div>
+    <div class="letter" (click)="setLetter($event)">e</div>
+    <div class="letter" (click)="setLetter($event)">r</div>
+    <div class="letter" (click)="setLetter($event)">t</div>
+    <div class="letter" (click)="setLetter($event)">y</div>
+    <div class="letter" (click)="setLetter($event)">u</div>
+    <div class="letter" (click)="setLetter($event)">i</div>
+    <div class="letter" (click)="setLetter($event)">o</div>
+    <div class="letter" (click)="setLetter($event)">p</div>
+  </div>
+  <div class="line">
+    <div class="letter" (click)="setLetter($event)">q</div>
+    <div class="letter" (click)="setLetter($event)">s</div>
+    <div class="letter" (click)="setLetter($event)">d</div>
+    <div class="letter" (click)="setLetter($event)">f</div>
+    <div class="letter" (click)="setLetter($event)">g</div>
+    <div class="letter" (click)="setLetter($event)">h</div>
+    <div class="letter" (click)="setLetter($event)">j</div>
+    <div class="letter" (click)="setLetter($event)">k</div>
+    <div class="letter" (click)="setLetter($event)">l</div>
+    <div class="letter" (click)="setLetter($event)">m</div>
+  </div>
+  <div class="line">
+    <div class="letter special" (click)="setLetter($event)">.</div>
+    <div class="letter" (click)="setLetter($event)">w</div>
+    <div class="letter" (click)="setLetter($event)">x</div>
+    <div class="letter" (click)="setLetter($event)">c</div>
+    <div class="letter" (click)="setLetter($event)">v</div>
+    <div class="letter" (click)="setLetter($event)">b</div>
+    <div class="letter" (click)="setLetter($event)">n</div>
+    <div class="letter special" (click)="deleteLastLetter()">⌫</div>
+    <div class="letter special" (click)="onEnterPress()">↲</div>
+  </div>
+</div>
