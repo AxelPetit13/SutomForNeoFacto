@@ -1,6 +1,6 @@
 <form class="form" (ngSubmit)="startGame()">
   <div class="form-group">
-    <label for="difficulty">Difficulté</label>
+    <label for="difficulty">Difficulty</label>
     <select
       type="number"
       id="difficulty"
@@ -8,14 +8,14 @@
       [(ngModel)]="difficulty"
       required
     >
-      <option value="6">Facile</option>
-      <option value="7">Moyen</option>
-      <option value="8">Difficile</option>
-      <option value="9">Extrême</option>
+      <option value="6">Easy</option>
+      <option value="7">Medium</option>
+      <option value="8">Hard</option>
+      <option value="9">Extreme</option>
     </select>
   </div>
   <div class="form-group">
-    <label for="maxAttempts">Nombre de tentatives</label>
+    <label for="maxAttempts">Number of attempts</label>
     <select
       type="number"
       id="maxAttempts"
@@ -28,5 +28,5 @@
       </option>
     </select>
   </div>
-  <button type="submit" class="blue-button">Commencer</button>
+  <button type="submit" class="blue-button">Start</button>
 </form>

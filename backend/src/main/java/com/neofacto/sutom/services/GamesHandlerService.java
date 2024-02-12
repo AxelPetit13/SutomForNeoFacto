@@ -83,13 +83,13 @@ public class GamesHandlerService implements IGamesHandlerService {
         }
 
         // Count occurrences of each letter in word
-        int[] wordLetterCounts = new int[Character.MAX_VALUE +1];
+        int[] wordLetterCounts = new int[26]; // 26 letters in the alphabet (a-z), the game is in English so no accents or special characters are expected.
         for (char c : word.toCharArray()) {
             wordLetterCounts[c - 'a']++;
         }
 
         // Count occurrences of each letter in attempt
-        int[] attemptLetterCounts = new int[Character.MAX_VALUE +1];
+        int[] attemptLetterCounts = new int[26];
         for (char c : attempt.toCharArray()) {
             attemptLetterCounts[c - 'a']++;
         }

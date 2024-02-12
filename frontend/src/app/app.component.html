@@ -25,38 +25,37 @@
   </ng-container>
 
   <ng-container *ngIf="gameService.gameIsWon">
-    <h3>Gagné !</h3>
+    <h3>You Win !</h3>
     <p>
-      Il vous a fallu {{ gameService.attempts.length }} tentative{{
+      You needed {{ gameService.attempts.length }} attempt{{
         gameService.attempts.length > 1 ? "s" : ""
       }}.
     </p>
-    <p>Merci d'avoir joué !</p>
+    <p>Thanks for playing!</p>
     <button class="blue-button" (click)="replay()">Rejouer</button>
   </ng-container>
 
   <ng-container *ngIf="gameService.gameIsWon === false">
-    <h3>Perdu !</h3>
-    <p>Vous ferez mieux la prochaine fois...</p>
-    <p>Merci d'avoir joué !</p>
-    <button class="blue-button" (click)="replay()">
-      Retentez votre chance
-    </button>
+    <h3>You Lost !</h3>
+    <p>You'll do better next time...</p>
+    <p>Thanks for playing!</p>
+    <button class="blue-button" (click)="replay()">Try again</button>
   </ng-container>
 
   <ng-container *ngIf="gameService.errorStatus">
     <ng-container [ngSwitch]="gameService.errorStatus">
       <p *ngSwitchCase="gameErrorStatus.INVALID_GAME_ID">
-        Un problème est survenu lors de la récupération de la partie. Veuillez
-        recharger la page.
+        A problem has occurred during game recovery. Please reload the page.
       </p>
       <p *ngSwitchCase="gameErrorStatus.WORD_ALREADY_TRIED">
-        Vous avez déjà essayé ce mot. Veuillez en essayer un autre.
+        You've already tried this word. Please try another.
       </p>
-      <p *ngSwitchCase="gameErrorStatus.WORD_NOT_FOUND">Ce mot n'existe pas.</p>
+      <p *ngSwitchCase="gameErrorStatus.WORD_NOT_FOUND">
+        This word does not exist.
+      </p>
       <p *ngSwitchCase="gameErrorStatus.WORD_WRONG_SIZE">
-        Le mot soumis n'a pas la même longueur que le mot à deviner. Veuillez en
-        essayer une autre.
+        The word submitted is not the same length as the word to be guessed.
+        Please try another.
       </p>
     </ng-container>
   </ng-container>

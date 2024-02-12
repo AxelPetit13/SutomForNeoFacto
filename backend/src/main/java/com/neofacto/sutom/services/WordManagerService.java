@@ -12,7 +12,7 @@ public class WordManagerService implements IWordManagerService {
 
     public WordManagerService() {
         RestTemplate restTemplate = new RestTemplate();
-        String RANDOM_WORD_API_URL = "https://random-word-api.herokuapp.com/all?lang=fr";
+        String RANDOM_WORD_API_URL = "https://random-word-api.herokuapp.com/all?lang=en";
         String[] response = restTemplate.getForObject(RANDOM_WORD_API_URL, String[].class);
 
         // Sort words by length
